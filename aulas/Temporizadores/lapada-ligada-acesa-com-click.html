@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teporizadores</title>
+  </head>
+  <body>
+    <h1>Lampada Acesa</h1>
+    <img id="lampada" src="lampada-apagada.png" alt="" />
+
+    <script>
+      let imgName = document.querySelector("#lampada");
+
+      imgName.onclick = function () {
+        if (imgName.src.match("apagada")) {
+          imgName.src = "lampada-acesa.png";
+        } else {
+          imgName.src = "lampada-apagada.png";
+        }
+      };
+    
+    </script>
+    
+  </body>
+</html>

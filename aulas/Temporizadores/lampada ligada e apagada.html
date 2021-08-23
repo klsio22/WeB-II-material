@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teporizadores</title>
+  </head>
+  <body>
+    <h1>Lampada Acesa</h1>
+    <img id="lampada" src="lampada-apagada.png" alt="" />
+
+    <script>
+
+      document.querySelector("#lampada").onclick = function () {
+        this.src = "lampada-acesa.png";
+        setTimeout(desliga, 2000);
+      };
+
+      function desliga() {
+        document.querySelector("#lampada").src = "lampada-apagada.png";
+      }
+    </script>
+  </body>
+</html>
