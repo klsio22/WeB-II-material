@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Testes</title>
+</head>
+
+<body>
+
+  <button id="hello">
+    Diga "olá"
+  </button>
+
+  button#botao.botao[type]
+
+
+  <script>
+
+    document.querySelector('#hello').onclick = function () {
+      alert("Bem-vido à UTFPR!!!");
+    }
+
+  </script>
+
+
+  <h1>Impares de de 1 a 10: </h1>
+
+  <script>
+    for (let i = 0; i <= 10; i++) {
+      if (i % 2 != 0) {
+        document.write(i + "<br>")
+      }
+
+    }
+  </script>
+
+  <h1>Soma de um 1 a 100:</h1>
+
+  <script>
+    let soma = 0;
+
+    for (let i = 0; i <= 100; i++) {
+      soma += i
+    }
+
+    document.write(soma + "<br>")
+
+  </script>
+
+  <h1>escopo</h1>
+
+  <script>
+    var x = 10;
+    imprimir();
+
+    function imprimir() {
+
+      if (true) {
+        var x = 5
+      }
+      document.write(x + "<br>");
+    }
+
+    document.write(x + "<br>")
+  
+
+  </script>
+
+
+
+</body>
+
+</html>

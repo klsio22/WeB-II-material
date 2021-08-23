@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caixas de dialogos</title>
+</head>
+
+<body id="main">
+
+
+
+  <h1>
+    Inserir elementos
+  </h1>
+
+  <script>
+
+    let myBody = document.getElementById("main")
+    let textnode = document.createTextNode("Estou dentro!!")
+
+    let element = document.createElement("div")
+    element.appendChild(textnode)
+    myBody.appendChild(element)
+
+
+    document.getElementById("main").innerHTML += "<div> Estou dentro!!!</div>"
+
+
+    /* let age = prompt("Digite a sua idade:")
+    if (isNaN(age)) {
+      alert("Voçê digitou uma idade invalida !")
+    } else if (confirm("Voce quer revelar a sua idade ?"))
+      alert ("Minha idade é " + age)
+ */
+
+    let mundial = prompt("O palmeiras tem mundial ? (sim) ou (não)")
+
+    mundial.toLowerCase;
+    if(mundial == "sim"){
+      alert("Que Coversar essa ? claro que não")
+    }else{
+      alert("O Palmeiras não tem mundial nem copinha !")
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>
