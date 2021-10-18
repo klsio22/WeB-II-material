@@ -62,8 +62,8 @@
   <div id="div-page">
 
   </div>
-
-  <a href="outra.html">Ir para proxima pagina</a>
+  <hr>
+  <a href="outra_pagina.html">Ir para proxima pagina</a>
 
   <script>
     let div_page = document.querySelector("#div-page");
@@ -83,8 +83,8 @@
 
       let altura = document.createElement("h3")
       let largura = document.createElement("h3")
+      
       altura.innerHTML = "Altura do Monitor: " + alturaMonitor;
-
       largura.innerHTML = "Largura do Monitor: " + larguraMonitor;
 
       div_page.appendChild(altura)
@@ -173,7 +173,6 @@
       if(window.confirm("Você realmente deseja acessar a página ? "))
         window.open("https://semana.tsi.gp.utfpr.edu.br/")
     }
-
 
   </script>
 

@@ -10,14 +10,20 @@
 
 <body>
 
-  <button onclick="paginaAnterior()">  aba anterior</button>
+  <button id="paginaAnterior"> aba anterior</button>
+  <!--   <button onclick="paginaAnterior()" >  aba anterior</button> -->
 
   <script>
-    function paginaAnterior() {
+    /* function paginaAnterior() {
+      window.history.back();
+    } */
+
+    document.querySelector('#paginaAnterior').onclick = () => {
       window.history.back();
     }
-  </script>
 
+
+  </script>
 
 
 
