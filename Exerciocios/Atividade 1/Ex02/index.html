@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
-  
-  <script>
 
-    window.onload = function(){
-      
+  <h1>Clientes cadastrados</h1>
+
+  <div id="user">
+    <button id="register">Registar</button>
+
+  </div>
+
+  <script>
+    const user = document.getElementById('user')
+    window.onload = () => {
+
     }
 
+    const confirm = () => {
+      if (window.confirm("Deseja continuar cadastro de clientes ? "))
+        resgister();
+    }
+
+    const resgister = document.querySelector("#register").onclick = () => {
+
+      let heightClient = prompt("Qual sua altura ?")
+      let weightCliente = prompt("Qual é o seu peso ?")
+
+      let height = document.createElement("h3");
+      let weight = document.createElement("h3")
+
+      height.innerHTML = (`Altura do cliente: ${heightClient}m`)
+      weight.innerHTML = (`Peso do cliente: ${weightCliente}kg`)
+
+      user.appendChild(height)
+      user.appendChild(weight)
+
+      console.log(heightClient)
+      console.log(weightCliente)
+
+      confirm();
+    }
 
   </script>
-  
+
 </body>
+
 </html>

@@ -68,13 +68,14 @@
   <script>
     let div_page = document.querySelector("#div-page");
 
-    window.onload = function () {
+    window.onload = () => {
       medidorMonitor();
       medidorJanela();
 
       url_atual();
       titulo();
       dataAtual();
+  
     }
 
     function medidorMonitor() {
@@ -83,7 +84,7 @@
 
       let altura = document.createElement("h3")
       let largura = document.createElement("h3")
-      
+
       altura.innerHTML = "Altura do Monitor: " + alturaMonitor;
       largura.innerHTML = "Largura do Monitor: " + larguraMonitor;
 
@@ -169,9 +170,11 @@
 
     }
 
-    function semanaAcademica(){
-      if(window.confirm("Você realmente deseja acessar a página ? "))
+    function semanaAcademica() {
+      if (window.confirm("Você realmente deseja acessar a página ? ")) {
         window.open("https://semana.tsi.gp.utfpr.edu.br/")
+
+      }
     }
 
   </script>
