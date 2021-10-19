@@ -5,49 +5,109 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Academia</title>
 </head>
 
 <body>
 
 
   <h1>Clientes cadastrados</h1>
+  <button id="register">Registar</button>
 
   <div id="user">
-    <button id="register">Registar</button>
-
   </div>
+  <hr>
+  <p>Deseja calculator novamente</p>
+  <button id="reload"> Sim </button>
+  <button id="redirect"> Não </button>
+
 
   <script>
-    const user = document.getElementById('user')
-    window.onload = () => {
+
+    const user = document.getElementById('user');
+    const calculator = document.querySelector('#calculator');
+    const allHeight = [];
+    const allWeight = [];
+    let total = 0;
+    let mediaHeight = 0;
+    let mediaWeight = 0;
+
+    const Academy = {
+
+      calc() {
+
+        console.log("Altura maxima " + Math.max(...allHeight));
+        console.log("Altura minimo " + Math.min(...allHeight));
+        console.log("Mais gordo " + Math.max(...allWeight));
+        console.log("Mais magro " + Math.min(...allWeight));
+
+        for (let i = 0; i < allHeight.length; i++) {
+          total += allHeight[i]
+        }
+
+        mediaHeight = parseFloat(total / allHeight.length);
+        console.log("media dos altura: " + (mediaHeight).toFixed(2))
+
+        total = 0;
+        for (let i = 0; i < allWeight.length; i++) {
+          total += allWeight[i]
+        }
+
+        mediaWeight = parseFloat(total / allWeight.length);
+        console.log("media dos pesos: " + (mediaWeight).toFixed(2))
+
+      },
+
+      resgister() {
+
+        document.querySelector("#register").onclick = () => {
+
+          do {
+
+            let heightClient = prompt("Qual sua altura em cm ?");
+            let weightCliente = prompt("Qual é o seu peso ?");
+
+            allHeight.push(Number(heightClient))
+            allWeight.push(Number(weightCliente))
+
+            let height = document.createElement("h3");
+            let weight = document.createElement("h3")
+
+            height.innerHTML = (`Altura do cliente: ${heightClient}cm`)
+            weight.innerHTML = (`Peso do cliente: ${weightCliente}kg`)
+
+            user.appendChild(height)
+            user.appendChild(weight)
+
+            console.log("Altura: " + heightClient);
+            console.log("Peso: " + weightCliente);
+          } while (window.confirm("Deseja continuar cadastro de clientes ? "));
+
+          Academy.calc();
+        }
+
+      },
+
+      reloadOrRedirect() {
+        document.querySelector("#reload").onclick = () => {
+          window.location.reload();
+        };
+
+        document.querySelector("#redirect").onclick = () => {
+          window.location.href = "https://www.tuasaude.com/calculadora/imc/"
+        };
+
+      },
+
+      exec() {
+        Academy.resgister()
+        Academy.reloadOrRedirect()
+      }
 
     }
 
-    const confirm = () => {
-      if (window.confirm("Deseja continuar cadastro de clientes ? "))
-        resgister();
-    }
+    Academy.exec();
 
-    const resgister = document.querySelector("#register").onclick = () => {
-
-      let heightClient = prompt("Qual sua altura ?")
-      let weightCliente = prompt("Qual é o seu peso ?")
-
-      let height = document.createElement("h3");
-      let weight = document.createElement("h3")
-
-      height.innerHTML = (`Altura do cliente: ${heightClient}m`)
-      weight.innerHTML = (`Peso do cliente: ${weightCliente}kg`)
-
-      user.appendChild(height)
-      user.appendChild(weight)
-
-      console.log(heightClient)
-      console.log(weightCliente)
-
-      confirm();
-    }
 
   </script>
 
