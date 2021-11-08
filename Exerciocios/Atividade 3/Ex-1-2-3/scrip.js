@@ -1,4 +1,4 @@
-const calcularMedia = (nota1, nota2) => {
+const calcularMedia = function (nota1, nota2) {
   return (nota1 + nota2) / 2;
 }
 
@@ -19,11 +19,11 @@ document.getElementById("adicionar").addEventListener("click",
     let numeroAulas = Number(document.getElementById("aulas").value);
     let numeroFrequecia = Number(document.getElementById("frequecia").value);
 
-    if (nota1 > 10 || nota2 > 10){
+    if (nota1 > 10 || nota2 > 10) {
       return alert("Nota 1 ou nota 2 não pode ser maior que 10")
     }
-  
-    if (numeroFrequecia > numeroAulas){
+
+    if (numeroFrequecia > numeroAulas) {
       return alert("Numero de frequência não pode ser maior que numero de aulas")
     }
 
