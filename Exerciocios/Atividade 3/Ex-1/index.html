@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas da universidade</title>
+
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Resutados do aluno</h1>
+
+
+  <table style="width:100%">
+    <tr>
+      <th>Aluno</th>
+      <th>Digite os valores</th>
+      <th>Media do aluno</th>
+      <th>Pocentagem de fequência</th>
+      <th>Resultado Final</th>
+    </tr>
+    <tr>
+      <td>nota 1</td>
+      <td><input id="nota1" type="number">
+      <td id="mediaNotas"></td>
+      <td id="Resultadofrequecia"></td>
+      <td id="resultadoFinal"></td>
+    </tr>
+    <tr>
+      <td >nota 2</td>
+      <td><input id="nota2" type="number"></td>      
+    </tr>
+    <tr>
+      <td>Numero de aulas</td>
+      <td><input id="aulas" type="number"></td>
+    </tr>
+
+    <tr>
+      <td>Numero de fequência</td>
+      <td><input id="frequecia" type="number"></td>
+    </tr>
+
+  </table>
+
+  <br>
+  <button id="adicionar">Adicionar valores</button>
+
+  <script src="./scrip.js">
+
+  </script>
+
+</body>
+
+</html>
