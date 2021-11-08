@@ -1,4 +1,4 @@
-const calcularMedia = function (nota1, nota2) {
+const calcularMedia = (nota1, nota2) => {
   return (nota1 + nota2) / 2;
 }
 
