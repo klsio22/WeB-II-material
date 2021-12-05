@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <Form></Form>
+  </title>
+</head>
+
+<body>
+
+  <form action="" id="search">
+    <input type="text" id="searchInput" placeholder="Digite aqui!">
+    <button onclick="alert(document.forms[0].searchInput)">enviar</button>
+  </form>
+
+  <script>
+    window.document.forms.search.searchInput.value = 'UTFPR';
+    let form = document.forms[0];
+    let buttonInput = form.searchInput;
+
+    buttonInput.addEventListener('focus', function () {
+      console.log('O campo está com foco')
+
+    })
+
+    let onBlurHandle = function () {
+
+      console.log('O campo perdeu o foco!')
+    }
+
+
+    buttonInput.onblur = onBlurHandle;
+
+    form.onsubmit = function () {
+      if(buttonInput.value == ''){
+        return false
+      }
+      return true;
+    }
+
+  </script>
+
+</body>
+
+</html>

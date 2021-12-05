@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WEB II</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!--Import Google Icon Font-->
+    <link
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/libraries/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/libraries/materialize/css/materialize.css"
+    />
+    <link rel="stylesheet" href="assets/resources/styles/style.css" />
+    <style>
+      .amount {
+        font-size: 4em;
+        color: chocolate;
+        font-weight: 500;
+      }
+
+      .title {
+        font-size: 2em;
+        color: black;
+        font-weight: 200;
+      }
+
+      input:invalid {
+        background-color: red !important;
+      }
+    </style>
+
+    <script src="assets/libraries/jquery/jquery-2.2.4.min.js"></script>
+    <script src="assets/libraries/materialize/js/materialize.js"></script>
+    <script src="assets/resources/scripts/common.js"></script>
+
+    <script>
+      $(function () {
+        $("#footer").load("footer.html");
+        $("#menu").load("menu.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="menu"></div>
+    <!-- container -->
+    <main>
+      <div class="container about">
+        <h5 class="">Cadastro de Redes de Computadores</h5>
+        <h6>Mais uma rede!</h6>
+        <hr />
+        <!-- linha -->
+        <div class="row">
+          <div class="col s12 center">
+            <img src="assets/resources/images/redes.png" height="200px" />
+          </div>
+          <div class="col s12 flow-text">
+            <div class="my-panel-content">
+              <p>
+                Crie um script para cadastro de redes internas de computadores
+                com valida&ccedil;&atilde;o em HTML5. O formul&aacute;rio deve
+                possuir os seguintes dados:
+              </p>
+              <ul class="browser-default">
+                <li>Nome do administrador da rede.</li>
+                <li>Telefone do administrador da rede.</li>
+                <li>
+                  Data no intervalo entre 01/01/2021 at&eacute; 31/12/2021.
+                </li>
+                <li>
+                  Quantidade de computadores (m&iacute;nimo 2 e m&aacute;ximo
+                  150 computadores).
+                </li>
+                <li>N&uacute;mero de IP (IPv4) do roteador.</li>
+              </ul>
+              <p>
+                Os dados cadastrados precisam ser
+                <strong>validados totalmente em HTML5</strong> e ent&atilde;o
+                <strong>armazenados em um objeto da classe Rede</strong>. Os
+                objetos cadastradas precisam ser
+                <strong>armazenados em um vetor</strong>, ou seja, um vetor de
+                redes. <strong>A cada cadastro, mostrar</strong> nos
+                pain&eacute;is apropriados a
+                <strong
+                  >quantidade de redes e a soma de computadores existentes em
+                  todas estas redes</strong
+                >.
+              </p>
+
+              <p class="my-subtitle">Exig&ecirc;ncias</p>
+              <ul class="browser-default">
+                <li>
+                  Usar a <strong>pseudo-classe :invalid </strong> para mostrar
+                  os erros de valida&ccedil;&atilde;o nos inputs. Pintar o fundo
+                  do input de vermelho usando <strong>!important</strong>.
+                </li>
+                <li>
+                  <strong
+                    >Todos os campos precisam ser obrigat&oacute;rios</strong
+                  >.
+                </li>
+                <li>
+                  Os campos
+                  <strong
+                    >nome do administrador (com acentua&ccedil;&atilde;o e
+                    iniciado em mai&uacute;scula), telefone e IP</strong
+                  >
+                  precisam ser validados via REGEX.
+                </li>
+                <li>
+                  <strong>No evento de submit</strong>, ler os dados do vetor e
+                  apresentar nos quadros de estat&iacute;stica, ou seja, o
+                  n&uacute;mero de redes e computadores.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- fim linha -->
+        <br />
+        <div class="col s12">
+          <h5>Cadastre uma rede!</h5>
+        </div>
+        <form id="form-network" class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                pattern=""
+                placeholder="João de Sá Pato"
+                id="input-name"
+                type="text"
+                class="validate"
+              />
+              <label for="input-name">Nome do administrador</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input
+                pattern=""
+                placeholder="(042) 9999-9999"
+                id="input-phone"
+                type="text"
+                class="validate"
+              />
+              <label for="input-phone">Telefone</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="input-date" type="date" class="validate" />
+              <label for="input-date">Data</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="input-computers" type="number" class="validate" />
+              <label for="input-computers">Número de Computadores</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="127.0.0.1"
+                id="input-ip"
+                type="text"
+                class="validate"
+              />
+              <label for="input-ip">IP</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <button class="btn waves-effect waves-light btn-large blue right">
+                Cadastrar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="grey lighten-2">
+        <div class="container">
+          <div class="row center">
+            <div class="col s12 m6">
+              <div class="card-panel">
+                <span class="title">REDES</span>
+                <p class="amount" id="p-amount-network">0</p>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card-panel">
+                <span class="title">COMPUTADORES</span>
+                <p class="amount" id="p-amount-computer">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fim container -->
+    </main>
+
+    <div id="footer"></div>
+    <script src="assets/resources/scripts/questao-1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banda Objeto</title>
+</head>
+
+<body>
+
+
+  <script>
+    let Band = function (name, members, amountShowMonth) {
+
+      this.name = name;
+      this.members = members;
+      this.amountShowMonth = amountShowMonth;
+
+    }
+
+    let Singer = function (name, band, cacheShow) {
+      this.name = name;
+      this.band = band;
+      this.cacheShow = cacheShow;
+
+      this.showData = function () {
+        console.log(`Nome ${this.name} Banda ${this.band.name}`)
+      }
+
+      this.showCacheshow = function () {
+        console.log(`Fatumento Mês ${this.cacheShow * this.band.amountShowMonth}`)
+      }
+
+
+    }
+
+    let neyvanna = new Band('Neyvanna', ['John', 'Joseph'], 3);
+    let julioNacimento = new Singer('Julio Nascimento', neyvanna, 20000)
+
+    julioNacimento.showData();
+    julioNacimento.showCacheshow();
+
+    console.log(julioNacimento);
+  </script>
+
+</body>
+
+</html>
