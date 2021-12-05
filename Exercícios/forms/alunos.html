@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Alunos</title>
+
+
+  <style>
+    .error {
+      background-color: indianred;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <form action="#">
+    <label for="input-name">Nome:</label>
+    <input id="input-name">
+    <br>
+    <label for="input-registration">Matricula: </label>
+    <input id="input-registration">
+    <br>
+
+    <fieldset>
+      <legend>Disciplina:</legend>
+
+      <input type="checkbox" name="discipline" value="web1">Web 1<br>
+      <input type="checkbox" name="discipline" value="web2">Web 2<br>
+      <input type="checkbox" name="discipline" value="web3">Web 3<br>
+      <input type="checkbox" name="discipline" value="web4">Web 4<br>
+
+    </fieldset>
+
+    <br>
+
+    <label for="select-course">Curso:</label>
+    <select id="select-course">
+      <option disabled selected value>Escolha um Curso</option>
+      <option value="tsi">Tecnologia em Suistemas para internet</option>
+      <option value="em">Engenharia Mecanica</option>
+      <option value="ec">Engenharia Civil</option>
+    </select>
+
+    <fieldset>
+      <legend>Período</legend>
+
+      <input type="radio" name="period" value="1">1 <br>
+      <input type="radio" name="period" value="2">2<br>
+      <input type="radio" name="period" value="3">3<br>
+      <input type="radio" name="period" value="4">4<br>
+
+    </fieldset>
+
+    <button>Enviar</button>
+  </form>
+
+  <script>
+    //nome
+    document.getElementById('input-name').onblur = function () {
+      if (this.value.trim() == "" || !isNaN(this.value)) {
+        this.classList.add('error')
+      } else {
+        this.classList.remove('error')
+      }
+
+    }
+
+
+    //Matricula
+    document.querySelector('#input-registration').addEventListener('blur', function () {
+      if (this.value.trim() == '' || isNaN(this.value))
+        this.classList.add('error')
+      else
+        this.classList.remove('error')
+
+    })
+
+    document.forms[0].onsubmit = (event) => {
+     
+      if (document.getElementById('input-name').value == "") {
+        alert('O nome não pode ser vazio ou ser um numero.');
+        return false;
+      }
+
+      let regInput = document.querySelector('#input-registration')
+      if (regInput.value.trim() == '' || isNaN(regInput.value)) {
+        alert('A matricula precisa ser um número')
+        return false
+      }
+
+      //disciplina
+      let element = document.getElementsByName('discipline')
+      let isChecked = false
+
+      element.forEach((e) => {
+        if (e.checked) {
+          isChecked = true
+        }
+
+      })
+
+      if (!isChecked) {
+        alert('Por favor , escolha um disciplina.')
+        return false;
+      }
+
+      //Cursor
+      if (document.getElementById('select-course').selectedIndex == 0) {
+        alert('Por favor, escolha um curso.')
+        return false;
+      }
+
+      //Periodo
+      let period = document.querySelectorAll('[name=period]')
+      isChecked = false;
+
+      for (e of period) {
+        if (e.checked) {
+          isChecked = true;
+        }
+      }
+
+      if (!isChecked) {
+        alert('Por favor,escolha um periodo')
+        return false;
+      }
+
+      alert('Enviado com sucesso!')
+
+    }
+  </script>
+</body>
+
+</html>
